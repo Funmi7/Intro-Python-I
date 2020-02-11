@@ -4,12 +4,18 @@ at how to read and write to files here:
 
 https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 """
-
+import os
+os.chdir(f"{os.getcwd()}/src")
 # Open up the "foo.txt" file (which already exists) for reading
 # Print all the contents of the file, then close the file
 # Note: pay close attention to your current directory when trying to open "foo.txt"
 
 # YOUR CODE HERE
+
+with open('foo.txt') as f:
+    print_data = f.read()
+    print(print_data)
+
 
 # Open up a file called "bar.txt" (which doesn't exist yet) for
 # writing. Write three lines of arbitrary content to that file,
@@ -17,3 +23,6 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 # sure that it contains what you expect it to contain
 
 # YOUR CODE HERE
+bar = open('bar.txt', "w")
+bar.write("This is just some random text\nThis is the second line\nand this is the final line!")
+bar.close
